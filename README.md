@@ -1,2 +1,2 @@
 # alx-system_engineering-devops
-Shell basics
+This project consists of scripts that houses commands to demonstrate the functionality of basic shell commands 
