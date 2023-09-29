@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# A script that responds to signals
+
+trap "echo 'I hate the kill command'; exit 0" SIGTERM
+trap "rm /var/run/myscript.pid; exit 0" SIGQUIT
+trap "echo 'Y U no love me?!'" SIGINT
+echo $$ > /var/run/myscript.pid
+while true;
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
