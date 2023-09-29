@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# A script that displays pid from the proc file
+
+for i in /proc/[0-9]*;
+do
+	cm=$(cat "$i"/comm)
+	if [ "$cm" == "bash" ]
+	then
+		id=$(echo "$i" | cut -d '/' -f 3)
+		echo "${id} ${cm}"
+	fi
+done
+

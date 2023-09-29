@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# A script that terminates with pkill
+
+pkill -f -SIGKILL "7-highlander" 

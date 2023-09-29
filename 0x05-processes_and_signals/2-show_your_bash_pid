@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# A script that displays proc lines containing bash keyword
+# shellcheck disable=SC2009
+
+ps aux | grep bash
+
