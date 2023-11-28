@@ -2,10 +2,9 @@
 # Configure nginx for redirection 301.
 
 sudo apt -y update
-sudo apt -y upgrade
 sudo apt -y install nginx
-sudo service nginx start
-newlines="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
-sudo sed -i "26i $newlines" /etc/nginx/sites-available/default
+sudo chown -R ubuntu /var/www
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+newinput="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
+sudo sed -i "26i $newinput" /etc/nginx/sites-available/default
 sudo service nginx restart
-sudo service nginx reload
