@@ -2,7 +2,7 @@
 # Copies a file to a server from a client.
 
 if [ "$#" -eq 4 ]; then
-    scp -i "$4" -o StrictHostKeyChecking=no "$1" "$3@$2:~"
+    scp -o StrictHostKeyChecking=no-i "$4"  "$1" "$3@$2:~"
 elif [ "$#" -eq 3 ]; then
     scp -o StrictHostKeyChecking=no "$1" "$3@$2~"
 else
