@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# install ngix on the server.
+
+apt update
+apt install -y nginx
+echo 'Hello World!' > /var/www/html/index.nginx-debian.html
+service nginx reload
