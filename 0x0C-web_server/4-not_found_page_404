@@ -12,3 +12,4 @@ regex="#error_page 404 /404.html;"
 echo "Ceci n'est pas une page" > /var/www/html/404.html
 sudo sed -i "47i\ $regex$er404_notfount" /etc/nginx/sites-available/default
 sudo service nginx restart
+sudo service nginx reload
