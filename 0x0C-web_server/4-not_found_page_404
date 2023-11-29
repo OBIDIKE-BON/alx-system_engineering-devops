@@ -8,7 +8,7 @@ echo "Hello World!" > /var/www/html/index.nginx-debian.html
 newinput="\\\trewrite /redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
 sudo sed -i "28i $newinput" /etc/nginx/sites-available/default
 er404_notfount="\n\\terror_page 404 /404.html;\n\tlocation = /var/www/html/404.html {\n\t\tinternal;\n\t}"
-regex="\\\t#error_page 404 /404.html;"
+regex="#error_page 404 /404.html;"
 echo "Ceci n'est pas une page" > /var/www/html/404.html
 sudo sed -i "47i\ $regex$er404_notfount" /etc/nginx/sites-available/default
 sudo service nginx restart
