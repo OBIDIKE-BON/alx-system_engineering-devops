@@ -1,4 +1,5 @@
 # Using Puppet| Install Nginx server, setup and configuration
+include stdlib
 
 package { 'nginx':
   ensure => 'installed'
