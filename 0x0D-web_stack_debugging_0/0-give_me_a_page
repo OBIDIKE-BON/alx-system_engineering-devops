@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Code to get Apache to run.
+
+sudo service apache2 start
