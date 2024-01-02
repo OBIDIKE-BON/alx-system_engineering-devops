@@ -18,11 +18,12 @@ if __name__ == '__main__':
         USR_ID = user.get('id')
         USR_NM = user.get('username')
         for task in tasks:
-            new_dict = {}
-            new_dict["username"] = USR_NM
-            new_dict['task'] = task.get('title')
-            new_dict['completed'] = task.get('completed')
-            task_list.append(new_dict)
+            if USR_ID == task.get('userId'):
+                new_dict = {}
+                new_dict["username"] = USR_NM
+                new_dict['task'] = task.get('title')
+                new_dict['completed'] = task.get('completed')
+                task_list.append(new_dict)
         my_dict[USR_ID] = task_list
 
     with open('todo_all_employees.json', 'w') as my_file:
