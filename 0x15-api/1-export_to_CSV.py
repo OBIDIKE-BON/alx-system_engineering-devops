@@ -14,7 +14,7 @@ if __name__ == "__main__":
     user_url = f'https://jsonplaceholder.typicode.com/users/{USER_ID}'
     tasks = requests.get(tasks_url).json()
     USERNAME = requests.get(user_url).json().get("username")
-    output=[]
+    output = []
     tasks_len = len(tasks)
     for idx in range(tasks_len):
         task = tasks[idx]
@@ -23,5 +23,5 @@ if __name__ == "__main__":
         output.append(f"{USER_ID},{USERNAME},{STATUS},{TITLE}".split(','))
 
     with open(f"{USER_ID}.csv", "w")as csvFile:
-        write = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
+        write = csv.writer(csvFile, quoting=csv.QUOTE_ALL)
         write.writerows(output)
