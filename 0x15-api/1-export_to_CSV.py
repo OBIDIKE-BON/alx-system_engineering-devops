@@ -3,7 +3,6 @@
 module to fetch tasks and save as csv
 """
 import csv
-import json
 import requests
 import sys
 
