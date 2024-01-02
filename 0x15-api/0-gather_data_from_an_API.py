@@ -11,7 +11,7 @@ if __name__ == "__main__":
     emp_id = sys.argv[1]
     url = f'https://jsonplaceholder.typicode.com/users/{emp_id}/todos'
     url_user = f'https://jsonplaceholder.typicode.com/users/{emp_id}'
-    
+
     with urllib.request.urlopen(url_user) as user:
         EMPLOYEE_NAME = json.loads(
                 user.read().decode("utf-8")
