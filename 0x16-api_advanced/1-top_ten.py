@@ -29,9 +29,13 @@ def top_ten(subreddit):
     if response.status_code == 404:
         print("None")
         return
-
-    # Parse the JSON response and extract the 'data' section
-    results = response.json().get("data")
+    # Check if the response is not empty and is in JSON format
+    if response.text and response.headers['content-type'] == 'application/json':
+        # Parse the JSON response and extract the 'data' section
+        results = response.json().get("data")
+    else:
+        print("Invalid or empty response received.")
+        return
 
     # Print the titles of the top 10 hottest posts
     [print(c.get("data").get("title")) for c in results.get("children")]
