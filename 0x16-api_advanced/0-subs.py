@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""module to query subscribers on a given subreddit."""
+"""
+Script that queries subscribers on a given Reddit subreddit.
+"""
+
 import requests
 
 
