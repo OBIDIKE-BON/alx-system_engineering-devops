@@ -30,7 +30,8 @@ def top_ten(subreddit):
         print("None")
         return
     # Check if the response is not empty and is in JSON format
-    if response.text and response.headers['content-type'] == 'application/json':
+    if response.text and response.headers['content-type'] ==\
+'application/json':
         # Parse the JSON response and extract the 'data' section
         results = response.json().get("data")
     else:
